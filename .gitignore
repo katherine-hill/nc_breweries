@@ -2,3 +2,5 @@
 .env
 config/database.yml
 lib/environment
+styles/.sass-cache/
+styles/.sass-cache/*
