@@ -15,7 +15,7 @@ Interactive Web API that allows a user to create a brewery and its associated be
 * Postgres SQL
 
 ---
-**for testing:
+**for testing:**
 * shotgun
 * rspec
 * pry
