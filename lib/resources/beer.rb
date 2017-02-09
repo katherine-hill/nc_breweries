@@ -38,3 +38,23 @@ end
 
 put '/api/beer/:id' do |id|
 end
+
+delete '/api/beer/:id' do |id|
+end
+
+beer_kind = {
+  1  => 'Pale Ales'
+  2  => 'Stron Ales'
+  3  => 'Scottish-Style Ales'
+  4  => 'Dark Lagers'
+  5  => 'Belgian Styles'
+  6  => 'Wild/Sour Beers'
+  7  => 'Brown Ales'
+  8  => 'Pilseners and Pale Lagers'
+  9  => 'India Pale Ales'
+  10 => 'Porters'
+  11 => 'Wheat Beers'
+  12 => 'Stouts'
+  13 => 'Specialty Beers'
+  14 => 'Bocks'
+}
