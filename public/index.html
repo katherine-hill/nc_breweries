@@ -14,19 +14,29 @@
 <body>
     <header>
         <div class="hero">
+          <figure class="hero-tint">
             <h1 class="site-title">NC Beers</h1>
+            <nav>
+                <form class="search-nav">
+                    <input type="text" placeholder="search for beer">
+                </form>
+            </nav>
+          </figure>
         </div>
     </header>
-    <main>
-        <nav>
-            <form class="search-nav">
-                <input type="text" placeholder="search for beer">
-            </form>
-            <button class="show-breweries">Show Breweries</button>
-        </nav>
+    <main class="main-container">
+      <button class="show-breweries">Show Breweries</button>
+      <div class="brewery-carousel">
+        <div class="ind-brewery a0"><img src="http://lorempixel.com/g/300/300"></div>
+        <div class="ind-brewery a1"><img src="http://lorempixel.com/g/300/300"></div>
+        <div class="ind-brewery a2"><img src="http://lorempixel.com/g/300/300"></div>
+        <div class="ind-brewery a3"><img src="http://lorempixel.com/g/300/300"></div>
+        <div class="ind-brewery a4"><img src="http://lorempixel.com/g/300/300"></div>
+        <div class="ind-brewery a5"><img src="http://lorempixel.com/g/300/300"></div>
+      </div>
     </main>
     <footer>
-        <div>blah blah blah </div>
+        <div class="copyright">&copy blah blah blah </div>
     </footer>
     <script id="brewery-template" type="text/x-handlebars-template">
         <div class="brewery-container">
