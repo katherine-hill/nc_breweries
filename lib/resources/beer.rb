@@ -35,3 +35,6 @@ post '/api/beer' do
   halt 404 if beer.id.nil?
   [201, beer.to_json]
 end
+
+put '/api/beer/:id' do |id|
+end
