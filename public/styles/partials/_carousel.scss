@@ -1,0 +1,21 @@
+.brewery-carousel {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 5% auto;
+
+  .big-cool-arrow {
+    margin-top: 6%;
+    max-width: 70px;
+  }
+}
+
+.ind-brewery img {
+  max-width: 350px;
+  padding: 5%;
+}
+
+.hide {
+  display: none;
+}

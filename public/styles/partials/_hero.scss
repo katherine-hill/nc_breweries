@@ -1,6 +1,23 @@
 .hero {
-    background: url('images/nc-brewery-hero.jpg')center center no-repeat;
-    width: 100%;
-    height: 500px;
+    background: url('images/nc-brewery-hero.jpg') center no-repeat;
     background-size: cover;
+    height: 450px;
+    width: 100%;
+}
+
+.hero-tint {
+  background: rgba($redBrown, 0.65);
+  height: 450px;
+  position:absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%
+}
+.site-title {
+  color: $offWhite;
+  font-family: $heroFont;
+  font-size: 10rem;
+  margin-top: 13%;
+  text-align: center;
 }

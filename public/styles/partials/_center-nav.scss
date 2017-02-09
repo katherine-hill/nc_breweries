@@ -1,0 +1,29 @@
+nav {
+  height: 50px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  width: 100%;
+
+  .search-nav {
+    background: rgba($offWhite, 0.25);
+    border: none;
+    height: 100%;
+    width: 100%;
+
+    input {
+      background: rgba($offWhite, 0.15);
+      box-sizing: border-box;
+      box-shadow: none;
+      height: 100%;
+      outline: none;
+      width: 100%;
+    }
+  }
+}
+
+::-webkit-input-appearance {
+    font-style: italic;
+}
+::-moz-input-appearance {
+    font-style: italic;
+}
