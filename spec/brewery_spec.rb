@@ -11,6 +11,12 @@ describe 'app' do
     Sinatra::Application
   end
 
+  #  __  __     __   __     __     ______
+  # /\ \/\ \   /\ "-.\ \   /\ \   /\__  _\
+  # \ \ \_\ \  \ \ \-.  \  \ \ \  \/_/\ \/
+  #  \ \_____\  \ \_\\"\_\  \ \_\    \ \_\
+  #   \/_____/   \/_/ \/_/   \/_/     \/_/
+
   describe Brewery do
     describe '#valid?' do
       context 'when only given a name' do
@@ -36,6 +42,13 @@ describe 'app' do
       end
     end
   end
+
+  #  ______     ______   __
+  # /\  __ \   /\  == \ /\ \
+  # \ \  __ \  \ \  _-/ \ \ \
+  #  \ \_\ \_\  \ \_\    \ \_\
+  #   \/_/\/_/   \/_/     \/_/
+
   describe 'API #get /api/breweries' do
     context 'searching all breweries without filtering' do
       it 'returns all breweries' do

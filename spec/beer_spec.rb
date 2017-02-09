@@ -76,8 +76,8 @@ describe 'app' do
       it 'returns all beers' do
         get '/api/beers'
           # binding.pry
-        expect(last_response.body).to include('High Life')
         expect(last_response).to be_ok
+        expect(last_response.body).to include('High Life')
         expect(last_response.status).to eq 200
       end
     end
