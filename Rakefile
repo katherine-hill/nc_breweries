@@ -14,6 +14,13 @@ namespace :db do
       connection_details = YAML::load(File.open('config/database.yml'))
     end
 
+    rack_env = ENV['RACK_ENV']
+    if rack_env.blank?
+      connection_details = connection_details['development']
+    else
+      connection_details = connection_details[rack_env]
+    end
+
     ActiveRecord::Base.establish_connection(connection_details)
     ActiveRecord::Migrator.migrate("db/migrate/")
   end
@@ -24,6 +31,13 @@ namespace :db do
 
     if connection_details.blank?
       connection_details = YAML::load(File.open('config/database.yml'))
+    end
+
+    rack_env = ENV['RACK_ENV']
+    if rack_env.blank?
+      connection_details = connection_details['development']
+    else
+      connection_details = connection_details[rack_env]
     end
 
     admin_connection = connection_details.merge({'database'=> 'postgres',
@@ -38,6 +52,13 @@ namespace :db do
 
     if connection_details.blank?
       connection_details = YAML::load(File.open('config/database.yml'))
+    end
+
+    rack_env = ENV['RACK_ENV']
+    if rack_env.blank?
+      connection_details = connection_details['development']
+    else
+      connection_details = connection_details[rack_env]
     end
 
     admin_connection = connection_details.merge({'database'=> 'postgres',
