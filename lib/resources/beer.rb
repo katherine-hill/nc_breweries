@@ -7,7 +7,16 @@ require 'pry'
 
 get '/api/beers' do
   Beer.all.to_json
+
+  #name kind description foreign_key
+
+
+
 end
+
+
+
+
 
 get '/api/beers/:id' do |id|
   beer = Beer.find_by_id(id)
