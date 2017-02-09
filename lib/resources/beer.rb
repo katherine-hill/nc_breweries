@@ -33,6 +33,7 @@ end
 post '/api/beer' do
   beer = Beer.new(params)
   halt [400, 'Missing some info'.to_json] unless beer.valid?
+  beer.save
   [201, beer.to_json]
 end
 
@@ -50,7 +51,7 @@ end
 delete '/api/beer/:id' do |id|
   beer = Beer.find_by_id(id)
   halt 404 if beer.nil?
-  Beer.destroy(id)
+  beer.destroy
 end
 
 beer_kind = {

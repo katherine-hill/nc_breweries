@@ -28,6 +28,7 @@ describe 'app' do
           expect(beer.valid?).to eq false
         end
       end
+
       context 'when only given a kind' do
         it 'returns false' do
           beer = Beer.new(kind: 5)
@@ -35,6 +36,7 @@ describe 'app' do
           expect(beer.valid?).to eq false
         end
       end
+
       context 'when only given a description' do
         it 'returns false' do
           beer = Beer.new(description: 'Blue collar refined flavor')
@@ -42,6 +44,7 @@ describe 'app' do
           expect(beer.valid?).to eq false
         end
       end
+
       context 'when only given a rating' do
         it 'returns false' do
           beer = Beer.new(rating: 3)
@@ -49,6 +52,7 @@ describe 'app' do
           expect(beer.valid?).to eq false
         end
       end
+
       context 'when only given a brewery_id' do
         it 'returns false' do
           beer = Beer.new(brewery_id: 1)
@@ -56,6 +60,7 @@ describe 'app' do
           expect(beer.valid?).to eq false
         end
       end
+
       context 'when given all required parameters' do
         it 'returns true' do
           beer = Beer.new(name: 'High Life', kind: 5, description: 'Blue collar refined flavor', rating: 3, brewery_id: 1)
@@ -105,6 +110,7 @@ describe 'app' do
         expect(last_response.status).to eq 201
       end
     end
+
     context 'incorrectly creating a new beer' do
       it 'fails to create a beer when missing values' do
         post '/api/beer?kind=7&description=Very%20Good&rating=4&brewery_id=1'
@@ -124,6 +130,7 @@ describe 'app' do
         expect(last_response.status).to eq 200
       end
     end
+
     context 'does not update an existing beer' do
       it 'fails to update a beer when missing brewery_id.' do
         patch '/api/beer/name=Fat%20Face&kind=8&rating=5&brewery_id=1'
@@ -132,6 +139,7 @@ describe 'app' do
       end
     end
   end
+
   describe 'API #delete /api/beer/:id' do
     context 'deleting a single beer' do
       it 'deletes a single beer by id' do

@@ -12,5 +12,6 @@ after do
 end
 
 get '/' do
+  p settings.public_folder
   send_file File.join(settings.public_folder, 'index.html')
 end
