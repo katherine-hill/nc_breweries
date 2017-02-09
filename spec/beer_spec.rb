@@ -78,8 +78,67 @@ describe 'app' do
         get '/api/beer'
           # binding.pry
         expect(last_response).to be_ok
-        # expect(last_response.body).to include('High Life')
+        expect(last_response.body).to include('Fat')
         expect(last_response.status).to eq 200
+      end
+    end
+  end
+
+  describe 'API #get /api/beer/:id' do
+    context 'calling one beer' do
+      it 'returns a single beer' do
+        get '/api/beer/2'
+          # binding.pry
+        expect(last_response).to be_ok
+        expect(last_response.body).to include('Fat')
+        expect(last_response.status).to eq 200
+      end
+    end
+  end
+
+  describe 'API #post /api/beer' do
+    context 'creating a new beer' do
+      it 'creates a single beer, associated with a brewery' do
+        post '/api/beer?name=Fat%20Tire&kind=7&description=Very%20Good&rating=4&brewery_id=1'
+
+        expect(last_response.body).to include('Fat')
+        expect(last_response.status).to eq 201
+      end
+    end
+    context 'incorrectly creating a new beer' do
+      it 'fails to create a beer when missing values' do
+        post '/api/beer?kind=7&description=Very%20Good&rating=4&brewery_id=1'
+
+        expect(last_response.body).to include('Missing')
+        expect(last_response.status).to eq 400
+      end
+    end
+  end
+
+  describe 'API #patch /api/beer' do
+    context 'updates an existing beer' do
+      it 'updates a single value or multiple values for a single beer.' do
+        patch '/api/beer/2?name=Fat%20Face&rating=3&brewery_id=1'
+
+        expect(last_response.body).to include('Face')
+        expect(last_response.status).to eq 200
+      end
+    end
+    context 'does not update an existing beer' do
+      it 'fails to update a beer when missing brewery_id.' do
+        patch '/api/beer/name=Fat%20Face&kind=8&rating=5&brewery_id=1'
+
+        expect(last_response.status).to eq 400
+      end
+    end
+  end
+  describe 'API #delete /api/beer/:id' do
+    context 'deleting a single beer' do
+      it 'deletes a single beer by id' do
+        # binding.pry
+        delete '/api/beer/3'
+
+        expect(Beer.find_by_id(3)).to eq nil
       end
     end
   end
