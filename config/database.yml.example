@@ -1,6 +1,15 @@
-host: 'localhost'
-adapter: 'postgresql'
-database: 'DBNAME'
-username: 'DBUSER'
-encoding: 'utf8'
-pool: 5
+development:
+  host: 'localhost'
+  adapter: 'postgresql'
+  database: 'DBNAME'
+  username: 'DBUSER'
+  encoding: 'utf8'
+  pool: 5
+
+test:
+  host: 'localhost'
+  adapter: 'postgresql'
+  database: 'DBNAME_test'
+  username: 'DBUSER'
+  encoding: 'utf8'
+  pool: 5

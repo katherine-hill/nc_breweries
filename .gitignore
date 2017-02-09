@@ -1,6 +1,6 @@
 .DS_Store
 .env
 config/database.yml
-lib/environment
+lib/environment.rb
 styles/.sass-cache/
 styles/.sass-cache/*
