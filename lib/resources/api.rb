@@ -1,17 +1,11 @@
-require_relative '../models/brewery'
-require_relative '../models/beer'
+require_relative '../resources/brewery'
+require_relative '../resources/beer'
 require 'active_record'
 require 'pg'
 require 'sinatra'
 require 'json'
-
-database_config = ENV['DATABASE_URL']
-
-if database_config.blank?
-  database_config = YAML::load(File.open('config/database.yml'))
-end
-
-ActiveRecord::Base.establish_connection(database_config)
+require 'yaml'
+require_relative '../environment'
 
 after do
   ActiveRecord::Base.connection.close

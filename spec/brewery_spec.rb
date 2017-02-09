@@ -1,8 +1,10 @@
 require_relative '../lib/resources/brewery'
-require 'rack/test'
+require 'active_record'
 require 'json'
+require 'rack/test'
 require 'rspec'
 require 'pry'
+require 'environment'
 
 describe 'app' do
   include Rack::Test::Methods
@@ -53,7 +55,7 @@ describe 'app' do
     context 'searching all breweries without filtering' do
       it 'returns all breweries' do
 
-        get '/api/breweries'
+        get '/api/brewery'
           brewery = Brewery.all
 
           expect(last_response).to be_ok
