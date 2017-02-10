@@ -1,12 +1,23 @@
 .legit-brewery-container {
-    background: url('images/brewery7.jpg') 20%;
+    background: url('images/brewery2.jpg') center top no-repeat;
+    background-size: cover;
     width: 100%;
     display: flex;
     justify-content: center;
     padding: 10px;
 
     .slick-arrow {
-        color: red;
+        @include button;
+        top: 0;
+        position: absolute;
+    }
+
+    .slick-next {
+        left: 85%;
+    }
+
+    .slick-prev {
+        right: 85%;
     }
 
     .brewery-container {
