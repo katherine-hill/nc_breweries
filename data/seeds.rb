@@ -3,7 +3,7 @@ require_relative '../lib/environment'
 require_relative '../lib/resources/api'
 
 def load_brewery_data
-  CSV.foreach('/Users/thomas/The Iron Yard/nc_breweries/data/breweries.csv', headers: true) do |row|
+  CSV.foreach('/Users/DougEisner/Documents/TIY/week5/nc_breweries/data/breweries.csv', headers: true) do |row|
     name = row['name']
     location = row['location']
 
@@ -12,7 +12,7 @@ def load_brewery_data
 end
 
 def load_beers_data
-  CSV.foreach('/Users/thomas/The Iron Yard/nc_breweries/data/beers.csv', headers: true) do |row|
+  CSV.foreach('/Users/DougEisner/Documents/TIY/week5/nc_breweries/data/beers.csv', headers: true) do |row|
     name = row['name']
     kind = row['kind']
     description = row['description']
