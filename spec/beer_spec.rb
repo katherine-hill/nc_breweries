@@ -88,8 +88,24 @@ describe 'app' do
       end
     end
 
-    context 'when adding a search' do
-      it 'searches name'
+    context 'when adding a search for kind' do
+      it 'searches kind' do
+        get '/api/beer?kind=7'
+
+        expect(last_response).to be_ok
+        expect(last_response.body).to include('Fat')
+        expect(last_response.status).to eq 200
+      end
+    end
+
+    context 'when adding a search by rating' do
+      it 'searches rating' do
+        get '/api/beer?rating=5'
+
+        expect(last_response).to be_ok
+        expect(last_response.body).to include('Fat')
+        expect(last_response.status).to eq 200
+      end
     end
   end
 
@@ -99,7 +115,6 @@ describe 'app' do
         get '/api/beer/2'
           # binding.pry
         expect(last_response).to be_ok
-        expect(last_response.body).to include('Fat')
         expect(last_response.status).to eq 200
       end
     end
