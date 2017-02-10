@@ -8,44 +8,42 @@
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-
 </head>
 
 <body>
     <header>
         <div class="hero">
-          <figure class="hero-tint">
-            <h1 class="site-title">NC Beers</h1>
-            <nav>
-                <form class="search-nav">
-                    <input type="text" placeholder="search for beer">
-                </form>
-            </nav>
-          </figure>
+            <figure class="hero-tint">
+                <h1 class="site-title">NC Beers</h1>
+                <nav>
+                    <form class="search-nav">
+                        <input type="text" placeholder="search for beer">
+                    </form>
+                </nav>
+            </figure>
         </div>
     </header>
     <main class="main-container">
-      <button class="show-breweries">Show Breweries</button>
-      <div class="brewery-carousel">
-        <div class="ind-brewery a0"><img src="http://lorempixel.com/g/300/300"></div>
-        <div class="ind-brewery a1"><img src="http://lorempixel.com/g/300/300"></div>
-        <div class="ind-brewery a2"><img src="http://lorempixel.com/g/300/300"></div>
-        <div class="ind-brewery a3"><img src="http://lorempixel.com/g/300/300"></div>
-        <div class="ind-brewery a4"><img src="http://lorempixel.com/g/300/300"></div>
-        <div class="ind-brewery a5"><img src="http://lorempixel.com/g/300/300"></div>
-      </div>
+        <button class="show-breweries">Show Breweries</button>
+        <div class="brewery-carousel">
+            <div class="ind-brewery a0"><img src="http://lorempixel.com/g/300/300"></div>
+            <div class="ind-brewery a1"><img src="http://lorempixel.com/g/300/300"></div>
+            <div class="ind-brewery a2"><img src="http://lorempixel.com/g/300/300"></div>
+            <div class="ind-brewery a3"><img src="http://lorempixel.com/g/300/300"></div>
+            <div class="ind-brewery a4"><img src="http://lorempixel.com/g/300/300"></div>
+            <div class="ind-brewery a5"><img src="http://lorempixel.com/g/300/300"></div>
+        </div>
+        <div class="legit-brewery-container"></div>
+        <div class="beer-container"></div>
     </main>
     <footer>
         <div class="copyright">&copy blah blah blah </div>
     </footer>
     <script id="brewery-template" type="text/x-handlebars-template">
         <div class="brewery-container">
-            <div>
-                <h2>{{title}}</h2>
-                <p class="overview-container">{{overview}}</p>
-                <p class="brewery-location">{{location}}</p>
-            </div>
-            <div class="close">X</div>
+            <h2>{{name}}</h2>
+            <p>{{id}}</p>
+            <p>{{location}}</p>
         </div>
     </script>
     <script id="beer-template" type="text/x-handlebars-template">
@@ -56,24 +54,11 @@
                 <p>{{description}}</p>
                 <a href="#" class="related-search-link" data-id="{{beerId}}">Search Related</a>
                 <select class="beer-rating" data-id="{{beerId}}">
-                   <option>Rate</option>
-                   <option value="1">1</option>
-                   <option value="2">2</option>
-                   <option value="3">3</option>
-                   <option value="4">4</option>
-                   <option value="5">5</option>
-                   <option value="6">6</option>
-                   <option value="7">7</option>
-                   <option value="8">8</option>
-                   <option value="9">9</option>
-                   <option value="10">10</option>
                    <option value="delete">Delete</option>
                </select>
             </div>
-            <div class="close">X</div>
         </div>
     </script>
-
     <script src="js/vendors/jquery-3.1.1.min.js"></script>
     <script src="js/vendors/handlebars-v4.0.5.js"></script>
     <script src="js/app.js"></script>
