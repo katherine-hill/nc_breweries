@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'json'
-require 'pry'
 require_relative '../models/brewery'
 require 'sinatra/json'
 
@@ -10,7 +9,7 @@ end
 
 get '/api/brewery/:id' do |id|
   brewery = Brewery.find_by_id(id)
-  
+
   halt 404 if brewery.nil?
 
   json brewery
