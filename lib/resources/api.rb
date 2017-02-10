@@ -6,12 +6,12 @@ require 'sinatra'
 require 'json'
 require 'yaml'
 require_relative '../environment'
+require_relative 'sinatra_json'
 
 after do
   ActiveRecord::Base.connection.close
 end
 
 get '/' do
-  p settings.public_folder
   send_file File.join(settings.public_folder, 'index.html')
 end

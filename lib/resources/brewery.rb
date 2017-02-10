@@ -2,18 +2,18 @@ require 'sinatra'
 require 'json'
 require 'pry'
 require_relative '../models/brewery'
+require 'sinatra/json'
 
 get '/api/brewery' do
-  Brewery.all.to_json
+  json Brewery.all
 end
 
 get '/api/brewery/:id' do |id|
   brewery = Brewery.find_by_id(id)
+  
   halt 404 if brewery.nil?
 
-  brewery_with_beers = JSON.parse(brewery.to_json)
-  brewery_with_beers['beers'] = JSON.parse(brewery.beers.to_json)
-  brewery_with_beers.to_json
+  json brewery
 end
 
 post '/api/brewery' do
