@@ -140,4 +140,16 @@ footer {
   footer .copyright {
     color: #EFEBCE; }
 
+.beer-and-brewery-container {
+  display: flex;
+  flex-wrap: wrap; }
+
+.brewery-container {
+  border: 2px solid red;
+  margin: 5%; }
+
+.beer-container {
+  border: 2px solid blue;
+  margin: 5%; }
+
 /*# sourceMappingURL=main.css.map */
