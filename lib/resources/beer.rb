@@ -11,7 +11,9 @@ get '/api/beer' do
   # end
 
   results = params[:results].to_i
-  beers = beers.sample(results) if results > 0 || results.nil?
+    unless results.blank?
+      beers = beers.sample(results) if results > 0 || results.nil?
+    end
 
   kind = params[:kind]
   unless kind.blank?
