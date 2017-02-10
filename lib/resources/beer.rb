@@ -4,7 +4,7 @@ require 'pry'
 require_relative '../models/beer'
 
 get '/api/beer' do
-  beers = Beer.all.to_json
+  beers = Beer.all
 
   search = params[:search_term]
   unless search.blank?
