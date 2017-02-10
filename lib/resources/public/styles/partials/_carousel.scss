@@ -5,6 +5,10 @@
     justify-content: center;
     padding: 10px;
 
+    .slick-arrow {
+        color: red;
+    }
+
     .brewery-container {
         font-family: $bodyFont;
         background: rgba($offWhite, .75);

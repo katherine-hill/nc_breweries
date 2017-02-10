@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
 </head>
 
 <body>
@@ -20,11 +21,12 @@
                         <input type="text" placeholder="search for beer">
                     </form>
                 </nav>
+                <p>or</p>
+                <button class="show-breweries">Show Breweries</button>
             </figure>
         </div>
     </header>
     <main class="main-container">
-        <button class="show-breweries">Show Breweries</button>
         <div class="brewery-carousel">
             <div class="ind-brewery a0"><img src=""></div>
             <div class="ind-brewery a1"><img src=""></div>
@@ -34,8 +36,8 @@
             <div class="ind-brewery a5"><img src=""></div>
         </div>
         <div class="beer-and-brewery-container">
-            <div class="legit-brewery-container"></div>
-            <div class="beer-actual-container"></div>
+            <div class="legit-brewery-container hide"></div>
+            <div class="beer-actual-container hide"></div>
         </div>
     </main>
     <footer>
@@ -64,6 +66,7 @@
     <script src="js/vendors/jquery-3.1.1.min.js"></script>
     <script src="js/vendors/handlebars-v4.0.5.js"></script>
     <script src="js/app.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 </body>
 
 </html>
