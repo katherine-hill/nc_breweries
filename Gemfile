@@ -6,6 +6,7 @@ gem 'puma'
 gem 'activerecord'
 gem 'pg'
 gem 'rake'
+gem 'rack'
 
 group :development do
   gem 'shotgun'

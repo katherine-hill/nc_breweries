@@ -87,6 +87,10 @@ describe 'app' do
         expect(last_response.status).to eq 200
       end
     end
+
+    context 'when adding a search' do
+      it 'searches name'
+    end
   end
 
   describe 'API #get /api/beer/:id' do

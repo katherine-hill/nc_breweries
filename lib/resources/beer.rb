@@ -6,10 +6,10 @@ require_relative '../models/beer'
 get '/api/beer' do
   beers = Beer.all
 
-  search = params[:search_term]
-  unless search.blank?
-    beers = beers.where(search_term: search)
-  end
+  # search = (name: params[:name], description: params[:description])
+  # unless search.blank?
+  #   beers = beers.search(name: params[:name], description: params[:description])
+  # end
 
   kind = params[:kind]
   unless kind.blank?
