@@ -1,23 +1,32 @@
 .hero {
     background: url('images/nc-brewery-hero.jpg') center top no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 600px;
     width: 100%;
 }
 
 .hero-tint {
-  background: rgba($redBrown, 0.65);
-  height: 450px;
-  position:absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%
+    background: rgba($redBrown, 0.65);
+    height: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    p {
+        font-size: 2rem;
+        margin: 0 auto 2%;
+        font-family: $heroFont;
+        color: $offWhite;
+    }
 }
+
 .site-title {
-  color: $offWhite;
-  font-family: $heroFont;
-  font-size: 10rem;
-  margin-top: 13%;
-  text-align: center;
+    color: $offWhite;
+    font-family: $heroFont;
+    font-size: 10rem;
+    margin-top: 13%;
+    text-align: center;
 }
