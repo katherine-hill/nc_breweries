@@ -11,6 +11,9 @@ get '/api/beer' do
   #   beers = beers.search(name: params[:name], description: params[:description])
   # end
 
+  results = params[:results].to_i
+  beers = beers.sample(results) if results > 0 || results.nil?
+
   kind = params[:kind]
   unless kind.blank?
     beers = beers.where(kind: kind)
