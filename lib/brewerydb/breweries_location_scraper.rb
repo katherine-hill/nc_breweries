@@ -33,12 +33,17 @@ response.each do |brewery|
 
   data = data['data']
 
-  regions = data.map { |location| location['region'] }
+  locations = data.map do |location|
+    {
+      locality: location['locality'],
+      region: location['region']
+    }
+  end
 
   brewery = {
     id: id,
     name: name,
-    regions: regions
+    locations: locations
   }
 
   breweries << brewery
