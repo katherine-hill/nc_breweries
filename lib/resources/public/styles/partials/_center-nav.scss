@@ -5,18 +5,28 @@ nav {
   width: 100%;
 
   .search-nav {
-    background: rgba($offWhite, 0.25);
-    border: none;
+    display: flex;
+    justify-content: center;
     height: 100%;
     width: 100%;
 
     input {
-      background: rgba($offWhite, 0.15);
+      background: transparent;
       box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid $offWhite;
       box-shadow: none;
+      color: $offWhite;
+      font-family: $bodyFont;
+      font-size: 1.5rem;
+      font-weight: 700;
       height: 100%;
+      letter-spacing: 8px;
+      margin: 0 auto;
       outline: none;
-      width: 100%;
+      text-align: center;
+      text-transform: uppercase;;
+      width: 40%;
     }
   }
 }
@@ -26,4 +36,9 @@ nav {
 }
 ::-moz-input-appearance {
     font-style: italic;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $offWhite;
+    opacity: 0.5;
 }

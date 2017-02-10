@@ -55,7 +55,7 @@ img {
   box-sizing: border-box; }
 
 .hero {
-  background: url("images/nc-brewery-hero.jpg") center no-repeat;
+  background: url("images/nc-brewery-hero.jpg") center top no-repeat;
   background-size: cover;
   height: 450px;
   width: 100%; }
@@ -82,23 +82,38 @@ nav {
   margin-bottom: 5%;
   width: 100%; }
   nav .search-nav {
-    background: rgba(239, 235, 206, 0.25);
-    border: none;
+    display: flex;
+    justify-content: center;
     height: 100%;
     width: 100%; }
     nav .search-nav input {
-      background: rgba(239, 235, 206, 0.15);
+      background: transparent;
       box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid #EFEBCE;
       box-shadow: none;
+      color: #EFEBCE;
+      font-family: "Old Standard TT", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
       height: 100%;
+      letter-spacing: 8px;
+      margin: 0 auto;
       outline: none;
-      width: 100%; }
+      text-align: center;
+      text-transform: uppercase;
+      width: 40%; }
 
 ::-webkit-input-appearance {
   font-style: italic; }
 
 ::-moz-input-appearance {
   font-style: italic; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #EFEBCE;
+  opacity: 0.5; }
 
 .brewery-carousel {
   align-content: center;
