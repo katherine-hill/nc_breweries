@@ -17,7 +17,7 @@ get '/api/beer' do
 
   kind = params[:kind]
   unless kind.blank?
-    beers = beers.where(kind: kind)
+    beers = beers.where('kind LIKE ?', ['%' + kind + '%'])
   end
 
   rating = params[:rating]
