@@ -1,0 +1,29 @@
+.carousel-nav {
+    background: url('images/nc-brewery-hero.jpg') center top no-repeat;
+    background-size: cover;
+    height: 125px;
+    width: 100%;
+}
+
+.nav-tint {
+    align-items: center;
+    background: rgba($redBrown, 0.65);
+    height: 125px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-title {
+    color: $offWhite;
+    font-family: $heroFont;
+    font-size: 3rem;
+    margin-top: 3%;
+    text-align: center;
+}
+
+.return-home {
+  @include button();
+}

@@ -20,21 +20,35 @@
         right: 85%;
     }
 
-    .brewery-container {
-        font-family: $bodyFont;
-        background: rgba($offWhite, .75);
-        width: 30%;
-        margin: 2%;
-        padding: 2%;
-        line-height: 1.5;
+    .brewery-container{
+      overflow:hidden;
+      font-family: $bodyFont;
+      background: rgba($offWhite, .75);
+      width: 35%;
+      margin: 1%;
+      padding: 1%;
+      line-height: 1.5;
 
-        h2 {
-            font-family: $heroFont;
-        }
+      h2 {
+          font-family: $heroFont;
+      }
+    }
+    .beer-button{
+      @include button;
+    }
+    .beer-actual-container{
+      float:right;
+      line-height: 1.25;
+      display: flex;
+      flex-wrap: wrap;
+      width: 65%;
+
+      .beer-container{
+        margin: 5%;
+        background: rgba($offWhite, .75);
+      }
     }
 }
-
-.beer-actual-container {}
 
 .hide {
     display: none;

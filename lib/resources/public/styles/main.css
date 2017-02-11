@@ -121,8 +121,41 @@ nav {
   color: #EFEBCE;
   opacity: 0.5; }
 
+.carousel-nav {
+  background: url("images/nc-brewery-hero.jpg") center top no-repeat;
+  background-size: cover;
+  height: 125px;
+  width: 100%; }
+
+.nav-tint {
+  align-items: center;
+  background: rgba(119, 34, 10, 0.65);
+  height: 125px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; }
+
+.nav-title {
+  color: #EFEBCE;
+  font-family: "Special Elite", sans-serif;
+  font-size: 3rem;
+  margin-top: 3%;
+  text-align: center; }
+
+.return-home {
+  background-color: rgba(239, 235, 206, 0.65);
+  border: none;
+  color: #77220A;
+  font-size: 1rem;
+  font-family: "Old Standard TT", serif;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 20%; }
+
 .legit-brewery-container {
-  background: url("images/brewery2.jpg") center top no-repeat;
+  background: url("images/brewery1.jpg") center top no-repeat;
   background-size: cover;
   width: 100%;
   display: flex;
@@ -144,14 +177,33 @@ nav {
   .legit-brewery-container .slick-prev {
     right: 85%; }
   .legit-brewery-container .brewery-container {
+    overflow: hidden;
     font-family: "Old Standard TT", serif;
     background: rgba(239, 235, 206, 0.75);
-    width: 30%;
-    margin: 2%;
-    padding: 2%;
+    width: 35%;
+    margin: 1%;
+    padding: 1%;
     line-height: 1.5; }
     .legit-brewery-container .brewery-container h2 {
       font-family: "Special Elite", sans-serif; }
+  .legit-brewery-container .beer-button {
+    background-color: rgba(239, 235, 206, 0.65);
+    border: none;
+    color: #77220A;
+    font-size: 1rem;
+    font-family: "Old Standard TT", serif;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 20%; }
+  .legit-brewery-container .beer-actual-container {
+    float: right;
+    line-height: 1.25;
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%; }
+    .legit-brewery-container .beer-actual-container .beer-container {
+      margin: 5%;
+      background: rgba(239, 235, 206, 0.75); }
 
 .hide {
   display: none; }
@@ -167,8 +219,34 @@ footer {
   footer .copyright {
     color: #EFEBCE; }
 
-.copyright {
-  font-weight: 300; }
+.brewery-container {
+  overflow: hidden;
+  font-family: "Old Standard TT", serif;
+  background: rgba(239, 235, 206, 0.75);
+  width: 35%;
+  padding: 5%;
+  line-height: 1.5; }
+  .brewery-container h2 {
+    font-family: "Special Elite", sans-serif; }
+
+.beer-button {
+  background-color: rgba(239, 235, 206, 0.65);
+  border: none;
+  color: #77220A;
+  font-size: 1rem;
+  font-family: "Old Standard TT", serif;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 20%; }
+
+.beer-actual-container {
+  float: right;
+  line-height: 1.25;
+  display: flex;
+  flex-wrap: wrap;
+  width: 65%; }
+  .beer-actual-container .beer-container {
+    margin: 5%; }
 
 .show-breweries {
   background-color: rgba(239, 235, 206, 0.65);
