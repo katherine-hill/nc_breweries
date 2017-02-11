@@ -41,7 +41,9 @@
             <h2>{{name}}</h2>
             <p>{{id}}</p>
             <p>{{location}}</p>
-            <button class="beer-button">Show {{name}}'s Beers</button>
+            <div class="beer-actual-container" data-id={{id}}>
+            </div>
+            <button class="beer-button" data-id={{id}}>Show {{name}}'s Beers</button>
         </div>
     </script>
     <script id="beer-template" type="text/x-handlebars-template">
