@@ -5,16 +5,11 @@ require_relative '../models/beer'
 get '/api/beer' do
   beers = Beer.all
 
-  # search = (name: params[:name], description: params[:description])
-  # unless search.blank?
-  #   beers = beers.search(name: params[:name], description: params[:description])
-  # end
-
-  # results = params[:results].to_i
-  #   unless results.blank?
-  #     beers = beers.sample(results) if results > 0 || results.nil?
-  #     beers = beers[0..results]
-  #   end
+  results = params[:results].to_i
+    unless results.blank?
+      beers = beers.sample(results) if results > 0 || results.nil?
+      # beers = beers[0..results] < -- This was causing a test to fail.
+    end
 
   name = params[:name]
   unless name.blank?
@@ -26,7 +21,7 @@ get '/api/beer' do
   kind = params[:kind]
   unless kind.blank?
     kind = kind.titleize
-    beers = beers.where('kind LIKE ?', ['%' + kind + '%'])
+    beers = beers.where(kind: kind)#('kind LIKE ?', ['%' + kind + '%']) < -- This was causing a test to fail.
     halt 404 if beers == []
   end
 
