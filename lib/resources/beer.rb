@@ -19,6 +19,7 @@ get '/api/beer' do
   unless kind.blank?
     kind = kind.titleize
     beers = beers.where('kind LIKE ?', ['%' + kind + '%'])
+    halt 404 if beers == []
   end
 
   rating = params[:rating]
