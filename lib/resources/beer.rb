@@ -16,6 +16,13 @@ get '/api/beer' do
   #     beers = beers[0..results]
   #   end
 
+  name = params[:name]
+  unless name.blank?
+    name = name.titleize
+    beers = beers.where('name LIKE ?', ['%' + name + '%'])
+    halt 404 if beers == []
+  end
+
   kind = params[:kind]
   unless kind.blank?
     kind = kind.titleize
