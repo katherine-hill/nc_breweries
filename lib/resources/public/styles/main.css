@@ -154,12 +154,11 @@ nav {
   border-radius: 10px;
   width: 20%; }
 
+.beer-and-brewery-container {
+  width: 100%; }
+
 .legit-brewery-container {
-  background: url("images/brewery1.jpg") center top no-repeat;
-  background-size: cover;
   width: 100%;
-  display: flex;
-  justify-content: center;
   padding: 10px; }
   .legit-brewery-container .slick-arrow {
     background-color: rgba(239, 235, 206, 0.65);
@@ -177,11 +176,10 @@ nav {
   .legit-brewery-container .slick-prev {
     right: 85%; }
   .legit-brewery-container .brewery-container {
-    overflow: hidden;
     font-family: "Old Standard TT", serif;
     background: rgba(239, 235, 206, 0.75);
-    width: 35%;
-    margin: 1%;
+    width: 90%;
+    margin: 1% auto;
     padding: 1%;
     line-height: 1.5; }
     .legit-brewery-container .brewery-container h2 {

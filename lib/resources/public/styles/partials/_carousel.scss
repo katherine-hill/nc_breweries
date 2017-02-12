@@ -1,9 +1,12 @@
+.beer-and-brewery-container {
+  width: 100%;
+}
+
+
 .legit-brewery-container {
-    background: url('images/brewery1.jpg') center top no-repeat;
-    background-size: cover;
+    // background: url('images/brewery1.jpg') center top no-repeat;
+    // background-size: cover;
     width: 100%;
-    display: flex;
-    justify-content: center;
     padding: 10px;
 
     .slick-arrow {
@@ -21,11 +24,11 @@
     }
 
     .brewery-container{
-      overflow:hidden;
+      // overflow:hidden;
       font-family: $bodyFont;
       background: rgba($offWhite, .75);
-      width: 35%;
-      margin: 1%;
+      width: 90%;
+      margin: 1% auto;
       padding: 1%;
       line-height: 1.5;
 
