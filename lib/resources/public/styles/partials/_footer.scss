@@ -1,9 +1,38 @@
 footer {
-  background-color: $redBrown;
-  bottom: 0;
-  height: 75px;
-  width: 100%;
-  .copyright{
-    color:$offWhite;
-  }
+    background: url('images/img-noise-1200x370.png');
+    border-top: 4px double rgba($lightYellow, 0.3);
+    border-bottom: 4px double rgba($lightYellow, 0.3);
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    color: $lightYellow;
+    font-family: $bodyFont, serif;
+    display: flex;
+    flex-wrap: nowrap;
+
+    .copyright {
+        margin-top: 2%;
+        margin-left: 2%;
+        padding: 1%;
+        height: 10%;
+        width: 50%;
+        justify-content: flex-start;
+    }
+
+    .happenings {
+        padding: 1%;
+        width: 50%;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 2%;
+        margin-left: 14%;
+
+        li {
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+            height: 25%;
+            margin: 0 1% 1% 4%;
+            padding-right: 2%;
+        }
+    }
 }
