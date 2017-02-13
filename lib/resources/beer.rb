@@ -6,21 +6,21 @@ get '/api/beer' do
   beers = Beer.all
 
   results = params[:results].to_i || 0
-    unless results == 0
-      beers = beers.limit(results)
-    end
-    
+  unless results == 0
+    beers = beers.limit(results)
+  end
+
   name = params[:name]
   unless name.blank?
-    name = name.titleize
-    beers = beers.where('name LIKE ?', ['%' + name + '%'])
+    # name = name.titleize
+    beers = beers.where('name ILIKE ?', ['%' + name + '%'])
     halt 404 if beers == []
   end
 
   kind = params[:kind]
   unless kind.blank?
-    kind = kind.titleize #Would be better to downcase this input and the search field.
-    beers = beers.where('kind LIKE ?', ['%' + kind + '%']) #< - This causes test to fail,but enables search by partial kind, rather than exact search: (kind: kind).
+    # kind = kind.titleize #Would be better to downcase this input and the search field.
+    beers = beers.where('kind ILIKE ?', ['%' + kind + '%']) #< - This causes test to fail,but enables search by partial kind, rather than exact search: (kind: kind).
     halt 404 if beers == []
   end
 
