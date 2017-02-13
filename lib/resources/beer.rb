@@ -4,17 +4,17 @@ require_relative '../models/beer'
 
 get '/api/beer' do
   beers = Beer.all
-
-  # search = (name: params[:name], description: params[:description])
-  # unless search.blank?
-  #   beers = beers.search(name: params[:name], description: params[:description])
+  # results = 5
+  # beers = beers.limit(results)
+  # before "/comments/?" do
+  # params[:start] ||= 0
   # end
 
-  # results = params[:results].to_i
-  #   unless results.blank?
-  #     beers = beers.sample(results) if results > 0 || results.nil?
-  #     beers = beers[0..results]
-  #   end
+  #start = params[:start] || 0
+  results = params[:results].to_i || 0
+  unless results == 0
+    beers = beers.limit(results)
+  end
 
   name = params[:name]
   unless name.blank?
