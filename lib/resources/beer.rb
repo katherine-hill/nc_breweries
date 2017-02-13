@@ -6,16 +6,10 @@ get '/api/beer' do
   beers = Beer.all
 
   results = params[:results].to_i || 0
-<<<<<<< HEAD
     unless results == 0
       beers = beers.limit(results)
     end
-=======
-  unless results == 0
-    beers = beers.limit(results)
-  end
->>>>>>> 80a2109090d4a4ba5361acc145b1c125e3e81bcc
-
+    
   name = params[:name]
   unless name.blank?
     name = name.titleize
