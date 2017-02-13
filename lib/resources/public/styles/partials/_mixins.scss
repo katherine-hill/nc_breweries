@@ -1,10 +1,50 @@
+@mixin bp($point) {
+     @if $point == mobile{
+        @media screen and (min-width: 320px) {
+             @content;
+        }
+    }
+    @if $point == small {
+         @media screen and (min-width: 550px){
+            @content;
+        }
+    }
+    @if $point == medium {
+         @media screen and (min-width: 670px){
+            @content;
+        }
+    }
+    @else if $point == large {
+         @media screen and (min-width: 820px){
+            @content;
+        }
+    }
+    @else if $point == full {
+         @media screen and (min-width: 1220px){
+            @content;
+        }
+    }
+}
 @mixin button {
-    background-color: rgba($offWhite, .65);
-    border: none;
-    color: $redBrown;
+    background: $cream;
     font-size: 1rem;
     font-family: $bodyFont;
     margin: 0 auto;
     border-radius: 10px;
-    width: 20%;
+    height: 30px;
+    color: $redBrown;
+    text-shadow: -1.5px 1.5px $lightYellow;
+
+    &:hover {
+        color: $redBrown;
+        box-shadow: inset 0 0 0 1px $greyishBrown;
+        border-radius: 12px;
+    }
+
+    &:active {
+        background: white;
+        box-shadow: inset 0 0 0 2px $cream;
+        color: $offWhite;
+        border-radius: 15px;
+    }
 };

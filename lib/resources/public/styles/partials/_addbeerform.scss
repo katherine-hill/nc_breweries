@@ -1,0 +1,58 @@
+.add-beer-form {
+    background: rgba($offWhite, .55);
+    display: flex;
+    margin: 1% 5%;
+    width: 90%;
+
+    h2 {
+        font-family: $heroFont;
+        color: $darkBrown;
+        text-shadow: -1px 2px $darkShadow;
+        font-size: 2rem;
+        margin: 1%;
+    }
+
+    legend {
+        padding-top: 1%;
+        font-family: $heroFont;
+        font-size: 1.5rem;
+        color: $darkBrown;
+    }
+
+    fieldset {
+        width: 45%;
+        display: flex;
+        margin: 5%;
+        justify-content: space-between;
+        background: rgba($offWhite, .55);
+    }
+
+    label {
+        font-family: $bodyFont;
+        color: $darkShadow;
+        font-size: 0.85rem;
+    }
+
+    .add-beer-type {
+        width: 50%;
+        margin: 2%;
+    }
+
+    .add-beer-name {
+        width: 50%;
+        margin: 2%;
+    }
+
+    .add-description {
+        margin: 2%;
+        width: 50%;
+    }
+
+    .brewery-add-on {
+        margin: 2%;
+    }
+
+    .beer-rating {
+        margin: 2%;
+    }
+}

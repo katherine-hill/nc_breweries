@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NC Beers and Breweries</title>
+    <title>NC Beer Compendium</title>
+    <link rel="stylesheet" href='styles/font-awesome-4.7.0/css/font-awesome.min.css'>
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
@@ -28,27 +29,86 @@
     </header>
     <main class="main-container">
         <div class="carousel-nav hide">
-          <div class="nav-tint">
-            <h1 class="nav-title">NC Beers</h1>
-            <button class="return-home">Return Home</button>
-            <form class="search-breweries">
-                <input type="text" placeholder="search for beer">
-            </form>
-          </div>
+            <div class="nav-tint">
+                <h1 class="nav-title">NC Beers</h1>
+
+                <div class="buttons">
+                    <div class="social-media">
+                        <a href="https://facebook.com"> <i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                    <button class="return-home">Return Home</button>
+                    <button class="add-beer">Add Beer</button>
+                </div>
+            </div>
         </div>
 
         <div class="beer-and-brewery-container hide">
             <div class="legit-brewery-container"></div>
 
         </div>
+
+        <form class="add-beer-form hide" method="post">
+            <h2>Add a Beer</h2>
+            <fieldset>
+                <legend>Beer basics</legend>
+
+                <div class="add-beer-name">
+                    <label for="addbeername">Name of beer:</label>
+                    <input id="addbeername" type="text" placeholder="name of beer" required="required">
+                </div>
+                <div class="add-beer-type">
+                    <label for="addbeertype">Type of beer:</label>
+                    <input id="addbeertype" type="text" placeholder="pilsner, stout, lager..." required="required">
+                </div>
+                <div class="brewery-add-on">
+                    <select data-id="{{beerId}}">
+                      <option>Pick a brewery</option>
+                    <option value={{brewery_id}}>{{name}}</option>
+                </select>
+                </div>
+                <!-- this needs to be templated -->
+
+            </fieldset>
+            <fieldset>
+                <legend>The details</legend>
+                <div class="add-description">
+                    <label for="describe-beer">Describe it:</label>
+                    <textarea id="describe-beer" maxlength="255" required="required"></textarea>
+                </div>
+                <div>
+                    <select class="beer-rating" data-id="{{beerId}}">
+
+                  <option>Rate this beer</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="delete">Delete</option>
+                </select>
+                </div>
+            </fieldset>
+
+        </form>
     </main>
     <footer>
-        <div class="copyright">&copy blah blah blah </div>
+        <div class="copyright">&copy NC Beer Compendium 2017</div>
+        <ul class="happenings">
+            <li>About Us</li>
+            <li>Our Newsletter</li>
+            <li>Contact</li>
+        </ul>
     </footer>
     <script id="brewery-template" type="text/x-handlebars-template">
         <div class="brewery-container">
             <h2>{{name}}</h2>
-            <p>{{id}}</p>
             <p>{{location}}</p>
             <div class="beer-actual-container" data-id={{id}}>
             </div>
@@ -59,19 +119,32 @@
         <div class="beer-container">
             <div>
                 <h2>{{name}}</h2>
-                <p>{{kind}}</p>
-                <p>{{description}}</p>
+                <p class="kind">{{kind}}</p>
+                <p class="description">{{description}}t is a long established fact that a reader will be distracted by the readable content of a </p>
                 <a href="#" class="related-search-link" data-id="{{beerId}}">Search Related</a>
                 <select class="beer-rating" data-id="{{beerId}}">
-                   <option value="delete">Delete</option>
-               </select>
+
+                      <option>Rate this beer</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="delete">Delete</option>
+                  </select>
+
             </div>
         </div>
     </script>
     <script src="js/vendors/jquery-3.1.1.min.js"></script>
     <script src="js/vendors/handlebars-v4.0.5.js"></script>
     <script src="js/app.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> -->
 </body>
 
 </html>
