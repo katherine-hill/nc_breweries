@@ -5,10 +5,9 @@ require_relative '../models/beer'
 get '/api/beer' do
   beers = Beer.all
 
-  results = params[:results].to_i
-    unless results.blank?
-      beers = beers.sample(results) if results > 0 || results.nil?
-      # beers = beers[0..results] < -- This was causing a test to fail.
+  results = params[:results].to_i || 0
+    unless results == 0
+      beers = beers.limit(results)
     end
 
   name = params[:name]

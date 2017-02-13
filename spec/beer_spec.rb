@@ -88,6 +88,16 @@ describe 'app' do
       end
     end
 
+    context 'when adding a search by name' do
+      it 'searches text strings in name column' do
+        get '/api/beer?name=Ale'
+
+        expect(last_response).to be_ok
+        expect(last_response.body).to include('Fat')
+        expect(last_response.status).to eq 200
+      end
+    end
+
     context 'when adding a search for kind' do
       it 'searches kind' do
         get '/api/beer?kind=7'
