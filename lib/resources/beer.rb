@@ -4,13 +4,7 @@ require_relative '../models/beer'
 
 get '/api/beer' do
   beers = Beer.all
-  # results = 5
-  # beers = beers.limit(results)
-  # before "/comments/?" do
-  # params[:start] ||= 0
-  # end
 
-  #start = params[:start] || 0
   results = params[:results].to_i || 0
   unless results == 0
     beers = beers.limit(results)
@@ -26,7 +20,7 @@ get '/api/beer' do
   kind = params[:kind]
   unless kind.blank?
     kind = kind.titleize
-    beers = beers.where('kind LIKE ?', ['%' + kind + '%'])
+    beers = beers.where(kind: kind)#('kind LIKE ?', ['%' + kind + '%']) < -- This was causing a test to fail.
     halt 404 if beers == []
   end
 
