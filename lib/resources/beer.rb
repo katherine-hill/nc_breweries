@@ -6,9 +6,15 @@ get '/api/beer' do
   beers = Beer.all
 
   results = params[:results].to_i || 0
+<<<<<<< HEAD
     unless results == 0
       beers = beers.limit(results)
     end
+=======
+  unless results == 0
+    beers = beers.limit(results)
+  end
+>>>>>>> 80a2109090d4a4ba5361acc145b1c125e3e81bcc
 
   name = params[:name]
   unless name.blank?
@@ -19,8 +25,8 @@ get '/api/beer' do
 
   kind = params[:kind]
   unless kind.blank?
-    kind = kind.titleize
-    beers = beers.where(kind: kind)#('kind LIKE ?', ['%' + kind + '%']) < -- This was causing a test to fail.
+    kind = kind.titleize #Would be better to downcase this input and the search field.
+    beers = beers.where('kind LIKE ?', ['%' + kind + '%']) #< - This causes test to fail,but enables search by partial kind, rather than exact search: (kind: kind).
     halt 404 if beers == []
   end
 

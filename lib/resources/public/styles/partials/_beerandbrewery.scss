@@ -1,28 +1,88 @@
+.brewery-container {
+    margin: 2% auto;
+    overflow: hidden;
+    font-family: $bodyFont;
+    background: rgba($offWhite, .75);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 
+    h2 {
+        margin-top: 1%;
+        padding-right: 1%;
+        display: flex;
+        justify-content: flex-end;
+        font-family: $heroFont;
+        font-size: 3rem;
+        color: $darkBrown;
+        text-shadow: -2px 2px $darkShadow;
+        width: 100%;
+    }
 
-.brewery-container{
-  overflow:hidden;
-  font-family: $bodyFont;
-  background: rgba($offWhite, .75);
-  width: 35%;
-  padding:5%;
-  line-height: 1.5;
+    p {
+        height: 10%;
+        width: 100%;
+        color: $darkShadow;
+        display: flex;
+        padding-right: 2%;
+        font-size: 1.5rem;
+        justify-content: flex-end;
+    }
 
-  h2 {
-      font-family: $heroFont;
-  }
+    .beer-button {
+        @include button;
+        margin: 1%;
+    }
 }
-.beer-button{
-  @include button;
-}
-.beer-actual-container{
-  float:right;
-  line-height: 1.25;
-  display: flex;
-  flex-wrap: wrap;
-  width: 65%;
 
-  .beer-container{
-    margin: 5%;
-  }
+.beer-actual-container {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2% 5%;
+    justify-content: space-around;
+    width: 90%;
+
+    .beer-container {
+        line-height: 1.5;
+        margin: 3%;
+        width: 42%;
+        padding: 1%;
+        border-bottom: $framing;
+        border-top: $framing;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+            font-size: 1rem;
+            color: $darkBrown;
+            text-shadow: none;
+        }
+
+        .related-search-link {
+            color: $redBrown;
+            font-size: 1rem;
+            margin-right: 10%;
+        }
+
+        .kind {
+            font-family: $bodyFont;
+            font-size: 0.75rem;
+            color: $darkBrown;
+        }
+
+        .description {
+            font-family: $bodyFont;
+            font-size: 1rem;
+            line-height: 1.1;
+            color: $darkShadow;
+        }
+
+        .beer-rating {
+            background: rgba($offWhite, .55);
+            color: $darkShadow;
+        }
+    }
 }
