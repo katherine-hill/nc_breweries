@@ -1,12 +1,17 @@
-nav {
+.connected-search{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.search-div {
     height: 50px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 100%;
+    margin: 5% auto;
+    width: 45%;
 
     .search-nav {
-        display: flex;
-        justify-content: center;
+        // display: flex;
+        // justify-content: center;
         height: 100%;
         width: 100%;
 
@@ -26,8 +31,12 @@ nav {
             outline: none;
             text-align: center;
             text-transform: uppercase;
-            width: 40%;
+            width: 100%;
         }
+    }
+
+    .button-bar {
+      margin: 2% auto;
     }
 }
 

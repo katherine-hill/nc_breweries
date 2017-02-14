@@ -1,8 +1,10 @@
 .add-beer-form {
+    // align-items: center;
     background: rgba($offWhite, .55);
-    display: flex;
-    margin: 1% 5%;
-    width: 90%;
+    display: block;
+    overflow: hidden;
+    margin: 1% auto;
+    width: 95%;
 
     h2 {
         font-family: $heroFont;
@@ -10,18 +12,22 @@
         text-shadow: -1px 2px $darkShadow;
         font-size: 2rem;
         margin: 1%;
+        width:  25%;
     }
 
     legend {
+        background-color: rgba($darkBrown, 1);
         padding-top: 1%;
         font-family: $heroFont;
         font-size: 1.5rem;
-        color: $darkBrown;
+        color: $offWhite;
     }
 
     fieldset {
-        width: 45%;
+        width: 40%;
         display: flex;
+        float: left;
+        height: 250px;
         margin: 5%;
         justify-content: space-between;
         background: rgba($offWhite, .55);
@@ -31,28 +37,34 @@
         font-family: $bodyFont;
         color: $darkShadow;
         font-size: 0.85rem;
-    }
 
-    .add-beer-type {
-        width: 50%;
-        margin: 2%;
-    }
-
-    .add-beer-name {
-        width: 50%;
-        margin: 2%;
     }
 
     .add-description {
-        margin: 2%;
-        width: 50%;
+      display: block;
+      width: 100%;
+
+      .describe-label, #describe-beer {
+        display: block;
+        margin: 5%;
+        width: 90%;
+      }
     }
 
-    .brewery-add-on {
-        margin: 2%;
+    .add-beer-name-label, .beer-type-label, .brewery-menu-select, #addbeername, #addbeertype, .brewery-add-on, .beer-rating  {
+        font-style: 2rem;
+        font-family: $bodyFont;
+        display: block;
+        width: 75%;
+        margin: 5%;
     }
 
-    .beer-rating {
-        margin: 2%;
-    }
+    .submitBtn,  {
+        color: $darkBrown;
+        font-family: $bodyFont;
+        font-size: 1rem;
+        margin: 5% auto 5% 40%;
+        width: 20%;
+      }
+
 }

@@ -27,8 +27,9 @@
 .buttons {
     display: flex;
     background: url('images/img-noise-1200x370.png');
-    border-top: 4px double rgba($lightYellow, 0.4);
-    border-bottom: 4px double rgba($lightYellow, 0.4);
+    border-top: 4px solid rgba($lightYellow, 0.4);
+    border-bottom: 4px solid rgba($lightYellow, 0.4);
+    font: $bodyFont;
     height: 90px;
     width: 100%;
 

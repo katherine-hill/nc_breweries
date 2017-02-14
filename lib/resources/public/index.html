@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NC Beer Compendium</title>
     <link rel="stylesheet" href='styles/font-awesome-4.7.0/css/font-awesome.min.css'>
-    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
 
@@ -17,13 +17,24 @@
         <div class="hero">
             <figure class="hero-tint">
                 <h1 class="site-title">NC Beers</h1>
-                <nav>
-                    <form class="search-nav">
-                        <input type="text" placeholder="search for beer">
-                    </form>
-                </nav>
-                <p>or</p>
-                <button class="show-breweries">Show Breweries</button>
+                <div class="connected-search">
+                  <div class="search-div">
+                      <form class="search-nav">
+                          <input type="text" placeholder="search beers">
+                      </form>
+                      <div class="button-bar">
+                        <button class="show-breweries">Search Breweries</button>
+                      </div>
+                  </div>
+                  <div class="search-div">
+                      <form class="search-nav">
+                          <input type="text" placeholder="search breweries">
+                      </form>
+                      <div class="button-bar">
+                        <button class="show-beers">Search Beers</button>
+                      </div>
+                  </div>
+                </div>
             </figure>
         </div>
     </header>
@@ -54,28 +65,25 @@
             <h2>Add a Beer</h2>
             <fieldset>
                 <legend>Beer basics</legend>
-
                 <div class="add-beer-name">
-                    <label for="addbeername">Name of beer:</label>
+                    <label class="add-beer-name-label" for="addbeername">Name of beer:</label>
                     <input id="addbeername" type="text" placeholder="name of beer" required="required">
                 </div>
                 <div class="add-beer-type">
-                    <label for="addbeertype">Type of beer:</label>
+                    <label class="beer-type-label" for="addbeertype">Type of beer:</label>
                     <input id="addbeertype" type="text" placeholder="pilsner, stout, lager..." required="required">
                 </div>
                 <div class="brewery-add-on">
-                    <select data-id="{{beerId}}">
+                    <select class="brewery-menu-select" data-id="{{beerId}}">
                       <option>Pick a brewery</option>
                     <option value={{brewery_id}}>{{name}}</option>
                 </select>
-                </div>
-                <!-- this needs to be templated -->
-
+              </div>
             </fieldset>
             <fieldset>
                 <legend>The details</legend>
                 <div class="add-description">
-                    <label for="describe-beer">Describe it:</label>
+                    <label class="describe-label" for="describe-beer">Describe it:</label>
                     <textarea id="describe-beer" maxlength="255" required="required"></textarea>
                 </div>
                 <div>
@@ -97,7 +105,6 @@
                 </div>
             </fieldset>
             <input class="submitBtn" type="submit" value="submit">
-
         </form>
     </main>
     <footer>
@@ -112,9 +119,17 @@
         <div class="brewery-container">
             <h2>{{name}}</h2>
             <p>{{location}}</p>
-            <div class="beer-actual-container" data-id={{id}}>
-            </div>
-            <button class="beer-button" data-id={{id}}>Show {{name}}'s Beers</button>
+
+              {{#each beers}}
+            <ul class="hide auto-beer-list">
+                <li><span class="key">Name:</span> {{this.name}}</li>
+                <li><span class="key">ID:</span> {{this.id}}</li>
+                <li><span class="key">Type:</span> {{this.kind}}</li>
+                <li><span class="key">Description:</span> {{this.description}}</li>
+                <li><span class="key">Rating:</span> {{this.rating}}</li>
+            </ul>
+              {{/each}}
+              <button class="beer-button" data-id={{id}}>Show {{name}}'s Beers</button>
         </div>
     </script>
     <script id="beer-template" type="text/x-handlebars-template">
