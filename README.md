@@ -2,7 +2,7 @@
 
 > A Sinatra based API that lists some of North Carolina's finest breweries and their craftsmanship
 
-Access here: [NC-Breweries]( https://thomftz.github.io/nc_breweries/)
+> Access readme here: [NC-Breweries]( https://thomftz.github.io/nc_breweries/)
 
 # Description
 
