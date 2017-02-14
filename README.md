@@ -2,6 +2,8 @@
 
 > A Sinatra based API that lists some of North Carolina's finest breweries and their craftsmanship
 
+Access here: [NC-Breweries]( https://thomftz.github.io/nc_breweries/)
+
 # Description
 
 Interactive Web API that allows a user to create a brewery and its associated beers. Breweries have a name and location. Beers have a name, kind (stout, pilsner..etc.), description, and rating.
