@@ -37,7 +37,7 @@
 }
 
 .beer-actual-container {
-    float: right;
+    // float: right;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -46,6 +46,7 @@
     width: 90%;
 
     .beer-container {
+        background-color: rgba($offWhite, 0.6);
         line-height: 1.5;
         margin: 3%;
         width: 42%;

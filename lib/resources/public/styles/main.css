@@ -93,10 +93,10 @@ img {
   height: 50px;
   margin: 5% auto;
   width: 45%; }
-  .search-div .search-nav {
+  .search-div .search-nav-1, .search-div .search-nav-2 {
     height: 100%;
     width: 100%; }
-    .search-div .search-nav input {
+    .search-div .search-nav-1 input, .search-div .search-nav-2 input {
       background: transparent;
       box-sizing: border-box;
       border: none;
@@ -299,7 +299,6 @@ footer {
       border-radius: 15px; }
 
 .beer-actual-container {
-  float: right;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -307,6 +306,7 @@ footer {
   justify-content: space-around;
   width: 90%; }
   .beer-actual-container .beer-container {
+    background-color: rgba(239, 235, 206, 0.6);
     line-height: 1.5;
     margin: 3%;
     width: 42%;
